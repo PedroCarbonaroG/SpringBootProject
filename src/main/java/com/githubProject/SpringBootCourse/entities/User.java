@@ -1,9 +1,15 @@
 package com.githubProject.SpringBootCourse.entities;
 
+import jakarta.persistence.*;
+
 import java.io.Serializable;
 
+@Entity
+@Table(name = "tb_user")
 public class User implements Serializable {
-    
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String email;
@@ -68,13 +74,9 @@ public class User implements Serializable {
         
         User other = (User) obj;
         if (id == null) {
-            if (other.id != null) {
-                return false;
-            }
+            return other.id == null;
         }
-        else if (!id.equals(other.id)) return false;
-
-        return true;
+        else return id.equals(other.id);
     }
 
 }

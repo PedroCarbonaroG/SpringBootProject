@@ -1,7 +1,7 @@
 package com.githubProject.SpringBootCourse.resources;
 
-import com.githubProject.SpringBootCourse.entities.Category;
-import com.githubProject.SpringBootCourse.services.CategoryService;
+import com.githubProject.SpringBootCourse.entities.Product;
+import com.githubProject.SpringBootCourse.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,21 +12,21 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/categorys")
-public class CategoryResource {
+@RequestMapping(value = "/products")
+public class ProductResource {
 
     @Autowired
-    private CategoryService categoryService;
+    private ProductService productService;
 
     @GetMapping
-    public ResponseEntity<List<Category>> findAll() {
-        List<Category> list = categoryService.findAll();
+    public ResponseEntity<List<Product>> findAll() {
+        List<Product> list = productService.findAll();
         return ResponseEntity.ok().body(list);
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Category> findById(@PathVariable Integer id) {
-        Category obj = categoryService.findById(id);
+    public ResponseEntity<Product> findById(@PathVariable Integer id) {
+        Product obj = productService.findById(id);
         return ResponseEntity.ok().body(obj);
     }
 }

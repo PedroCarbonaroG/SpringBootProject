@@ -1,8 +1,10 @@
 package com.githubProject.SpringBootCourse.config;
 
+import com.githubProject.SpringBootCourse.entities.Category;
 import com.githubProject.SpringBootCourse.entities.Order;
 import com.githubProject.SpringBootCourse.entities.User;
 import com.githubProject.SpringBootCourse.entities.enums.OrderStatus;
+import com.githubProject.SpringBootCourse.repositories.CategoryRepository;
 import com.githubProject.SpringBootCourse.repositories.OrderRepository;
 import com.githubProject.SpringBootCourse.repositories.UserRepository;
 
@@ -25,6 +27,9 @@ public class TestConfig implements CommandLineRunner {
     @Autowired
     private OrderRepository or;
 
+    @Autowired
+    private CategoryRepository cr;
+
     @Override
     public void run(String... args) throws Exception {
         User u1 = new User(null, "Maria Brown", "maria@gmail.com", "988888888", "123456");
@@ -34,7 +39,12 @@ public class TestConfig implements CommandLineRunner {
         Order o2 = new Order(null, Instant.parse("2019-07-21T03:42:10Z"), OrderStatus.WAITING_PAYMENT, u2);
         Order o3 = new Order(null, Instant.parse("2019-07-22T15:21:22Z"), OrderStatus.WAITING_PAYMENT, u1);
 
+        Category cat1 = new Category(null, "Electronics");
+        Category cat2 = new Category(null, "Books");
+        Category cat3 = new Category(null, "Computers");
+
         ur.saveAll(Arrays.asList(u1, u2));
         or.saveAll(Arrays.asList(o1, o2, o3));
+        cr.saveAll(Arrays.asList(cat1, cat2, cat3));
     }
 }

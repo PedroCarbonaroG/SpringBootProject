@@ -1,9 +1,7 @@
 package com.githubProject.SpringBootCourse.services;
 
 import com.githubProject.SpringBootCourse.entities.Order;
-import com.githubProject.SpringBootCourse.entities.User;
 import com.githubProject.SpringBootCourse.repositories.OrderRepository;
-import com.githubProject.SpringBootCourse.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

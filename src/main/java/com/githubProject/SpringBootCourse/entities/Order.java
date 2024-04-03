@@ -107,5 +107,7 @@ public class Order implements Serializable {
         return Objects.hash(id);
     }
 
-
+    public double getTotal() {
+        return items.stream().mapToDouble(OrderItem::getSubTotal).sum();
+    }
 }

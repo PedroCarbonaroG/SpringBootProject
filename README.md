@@ -1,6 +1,6 @@
 # SpringBoot Project Repository
 
-This repository serves as a Spring Boot project implementing a web service in Java. It integrates Spring Boot, JPA with Hibernate, and PostgreSQL for efficient data management and deployment on Heroku for production.
+This repository serves as a Spring Boot project implementing a web service in Java. It integrates Spring Boot, JPA with Hibernate, and H2 database to manage all tests in localhost.
 
 ## Project Overview
 
@@ -9,8 +9,7 @@ The project entails the following components and features:
 
 - **Spring Boot**: Utilized for rapid application development and streamlined configuration.
 - **JPA with Hibernate**: Enables object-relational mapping for seamless interaction with the database.
-- **PostgreSQL Database**: Integrated as the backend database management system.
-- **Heroku Deployment**: Deployment on Heroku for production use, ensuring accessibility and scalability.
+- **H2 Database**: Integrated as the backend database management system in localhost.
 
 ## Key Features
 
@@ -20,13 +19,6 @@ The project entails the following components and features:
 4. **Error Handling**: Implement comprehensive error handling to ensure system robustness.
 5. **Testing**: Conduct thorough testing procedures to validate system functionality.
 6. **Documentation**: Create detailed documentation for system architecture and API endpoints.
-
-## Deployment Process
-
-1. **Configure Heroku Environment**: Set up the Heroku account and configure necessary environment variables.
-2. **Build and Package Application**: Package the application with dependencies for deployment.
-3. **Heroku Deployment**: Utilize Heroku's deployment tools for deploying the application.
-4. **Monitoring and Maintenance**: Continuously monitor the deployed application for performance metrics and potential issues.
 
 ## Conclusion
 
